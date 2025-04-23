@@ -24,6 +24,9 @@
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
 
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -45,7 +48,7 @@
                 <div class="col-lg-4 sticky-lg-top vh-100">
                     <div class="d-flex flex-column h-100 text-center overflow-auto stack-g">
                         <img class="w-100 img-fluid mb-4 profile-img" src="img/profile.jpg" alt="Image">
-                        <h1 class="text-primary mt-2">Yoshikazu Hatasako</h1>
+                        <h1 class="text-primary mt-2">畑迫 睦和</h1>
                         <div class="mb-4" style="height: 22px;">
                             <h4 class="typed-text-output d-inline-block text-light"></h4>
                             <div class="typed-text d-none">C#, Backend Developer, Front End Developer, Web Designer</div>
@@ -53,34 +56,40 @@
                         <div class="d-flex justify-content-center mt-auto mb-3">
 
                         </div>
-                        <div class="d-flex align-items-end justify-content-between border-top">
-                            <a class="btn w-50 border-end" target="_blank" href="https://docs.google.com/spreadsheets/d/11Knzxy7lGxUiuYBnvGvdRO-X522FJA5_fRw1vpEbvR0/edit?gid=1294667698#gid=1294667698">CV</a>
-                            <a class="btn w-25 border-end fab fa-twitter" target="_blank" href="https://x.com/jaCvRCx8dQbGov6"></a>
-                            <a class="btn w-25 border-end fab fa-facebook-f" target="_blank" href="https://www.facebook.com/profile.php?id=100027883997441"></a>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <section id="about-me-section" class="py-5 border-bottom wow fadeInUp section-content" data-wow-delay="0.1s">
-                    </section>
-                    <section id="skills-section" class="py-5 border-bottom wow fadeInUp section-content" data-wow-delay="0.1s">
-                    </section>
-                    <section id="experience-section" class="py-5 wow fadeInUp section-content" data-wow-delay="0.1s">
-                    </section>
-                    <section id="services-section" class="py-5 border-bottom wow fadeInUp section-content" data-wow-delay="0.1s">
-                    </section>
-                    <!-- Footer Start -->
-                    <section class="wow fadeIn" data-wow-delay="0.1s">
-                        <div class="footer text-light text-center p-5">
-                            <div class="d-flex justify-content-center mb-4">
-                                <a class="btn btn-dark btn-square mx-1" target="_blank" href="https://x.com/jaCvRCx8dQbGov6"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-dark btn-square mx-1" target="_blank" href="https://www.facebook.com/profile.php?id=100027883997441"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-							
-                            <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							<p class="m-0">&copy; All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    <!-- Tab Navigation -->
+                    <div class="tab-navigation mb-4 section-content">
+                        <ul class="nav nav-tabs cyberpunk-tabs" id="content-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-content" type="button" role="tab" aria-controls="about-content" aria-selected="true">職務概要</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills-content" type="button" role="tab" aria-controls="skills-content" aria-selected="false">スキル</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience-content" type="button" role="tab" aria-controls="experience-content" aria-selected="false">プロジェクト</button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="content-tabs-content">
+                        <div class="tab-pane fade show active" id="about-content" role="tabpanel" aria-labelledby="about-tab">
+                            <section id="about-me-section" class="py-5 wow fadeInUp section-content" data-wow-delay="0.1s">
+                            </section>
                         </div>
-                    </section>
+                        <div class="tab-pane fade" id="skills-content" role="tabpanel" aria-labelledby="skills-tab">
+                            <section id="skills-section" class="py-5 wow fadeInUp section-content" data-wow-delay="0.1s">
+                            </section>
+                        </div>
+                        <div class="tab-pane fade" id="experience-content" role="tabpanel" aria-labelledby="experience-tab">
+                            <section id="experience-section" class="py-5 wow fadeInUp section-content" data-wow-delay="0.1s">
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Footer Start -->
                     <!-- Footer End -->
                 </div>
             </div>
@@ -91,8 +100,8 @@
         <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
         
         <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="lib/wow/wow.min.js"></script>
         <script src="lib/typed/typed.min.js"></script>
         <script src="lib/easing/easing.min.js"></script>

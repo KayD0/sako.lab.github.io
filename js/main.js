@@ -1,7 +1,6 @@
 import { generateAboutMeHTML } from './components/aboutme.js';
 import { generateSkillsHTML } from './components/skills.js';
 import { generateExperienceHTML } from './components/experiences.js';
-import { generateServicesHTML } from './components/services.js';
 // import { generateSkillsHTML } from './components/skills.js';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     generateAboutMeHTML();
     generateSkillsHTML();
     generateExperienceHTML();
-    generateServicesHTML();
 
     // Spinner
     var spinner = function () {
@@ -122,6 +120,35 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
+        });
+    });
+
+    // Tab functionality
+    const tabLinks = document.querySelectorAll('.nav-link');
+    tabLinks.forEach(function(tabLink) {
+        tabLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove active class from all tabs
+            tabLinks.forEach(function(link) {
+                link.classList.remove('active');
+                link.setAttribute('aria-selected', 'false');
+            });
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+            
+            // Hide all tab content
+            const tabContents = document.querySelectorAll('.tab-pane');
+            tabContents.forEach(function(content) {
+                content.classList.remove('show', 'active');
+            });
+            
+            // Show the selected tab content
+            const targetId = this.getAttribute('data-bs-target');
+            const targetContent = document.querySelector(targetId);
+            targetContent.classList.add('show', 'active');
         });
     });
 });

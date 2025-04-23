@@ -385,3 +385,82 @@ input:hover {
   box-shadow: 2px 2px 1px var(--p) inset;
   padding: 20px;
 }
+
+/* Table styling */
+.table {
+  background-color: var(--dg) !important;
+  color: var(--lg) !important;
+  border-color: var(--p) !important;
+}
+
+.table th {
+  color: var(--p) !important;
+  border-color: var(--p) !important;
+  font-family: 'Aldrich', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table td {
+  border-color: var(--p) !important;
+  font-family: 'Aldrich', sans-serif;
+}
+
+.table-dark {
+  background-color: var(--dg) !important;
+}
+
+.table-bordered {
+  border: 1px solid var(--p) !important;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid var(--p) !important;
+}
+
+.table tr:hover {
+  background-color: rgba(0, 255, 255, 0.1) !important;
+}
+
+/* Tab styling */
+.cyberpunk-tabs {
+  border-bottom: none;
+}
+
+.cyberpunk-tabs .nav-item {
+  margin-right: 5px;
+}
+
+.cyberpunk-tabs .nav-link {
+  background-color: var(--dg);
+  color: var(--lg);
+  border: none;
+  border-radius: 5px 5px 0 0;
+  font-family: 'Aldrich', sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  box-shadow: 1px 1px 1px var(--p) inset;
+  transition: all 0.3s ease;
+}
+
+.cyberpunk-tabs .nav-link:hover {
+  box-shadow: 2px 2px 2px var(--p) inset;
+  color: var(--p);
+}
+
+.cyberpunk-tabs .nav-link.active {
+  background-color: var(--dg);
+  color: var(--p);
+  border: none;
+  box-shadow: 2px 2px 2px var(--p) inset, 0 -2px 0 var(--p);
+}
+
+.tab-navigation {
+  padding: 10px;
+}
+
+.tab-content .section-content {
+  margin-top: 0;
+}

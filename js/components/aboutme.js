@@ -1,29 +1,95 @@
 const aboutMeData = {
-    "title": "About Me",
+    "title": "概要",
     "details": [
       {
-        "label": "Name",
-        "value": "Yoshikazu Hatasako"
+        "label": "氏名",
+        "value": "畑迫 睦和"
       },
       {
-        "label": "Birthday",
+        "label": "誕生日",
         "value": "9 June 1920"
       },
       {
-        "label": "Degree",
-        "value": "bachelor's"
+        "label": "学歴",
+        "value": "尾道市立大学"
       },
       {
-        "label": "Experience",
-        "value": "8 Years"
+        "label": "経験年数",
+        "value": "8 年"
       },
       {
         "label": "Email",
-        "value": "test@com"
+        "value": "h.yoshikazu0110@gmail.com"
       },
       {
-        "label": "Address",
-        "value": "Kanagawa-ken, Japan"
+        "label": "居住地",
+        "value": "東京都大田区"
+      }
+    ],
+    "careerSummary": [
+      "大学卒業後、株式会社アーネットにて業務システムエンジニアとして活動し、C++を用いた開発案件に半年間携わり、その後C#を用いた開発案件に約2年間従事しました。この期間には、業務系システムおよび業務WEBアプリケーションの開発に従事し、概要設計から総合試験までのフルサイクルを経験しました。",
+      "その後、デロイトトーマツリップルマーク合同会社に転職し、約3年間C#を用いた業務系WEBアプリケーションの開発に従事しました。この期間には、新規機能の開発を主に担当し、設計から実装、単体試験（テストコード作成）、結合試験仕様書の作成まで一人でお行いました。",
+      "現在は個人事業主として活動し、C#を用いた開発案件に取り組んでいます。ECパッケージ・ECマイクロサービスの機能改修、保守開発等を行っています。"
+    ],
+    "skills": [
+      {
+        "category": "リーダー経験",
+        "items": [
+          "3~4名ほどのチームリーダー経験",
+          "タスク切り出し",
+          "コードレビューの実施経験",
+          "コスト試算"
+        ]
+      },
+      {
+        "category": "バックエンド開発",
+        "items": [
+          "C#での一人称での作業可能な実務経験（5年）",
+          "ASP.NET MVCやASP.NET Coreを使用したWebアプリケーションの開発経験",
+          "クリーンアーキテクチャの理解と実践経験",
+          "テストコード実装経験"
+        ]
+      },
+      {
+        "category": "データベース設計・最適化",
+        "items": [
+          "テーブル設計、ER図作成",
+          "Entity Framework、Dapperを用いたデータベース操作の経験",
+          "データベースのクエリや構造のチューニング経験（SQL Server、Oracle）",
+          "複数のデータベース環境での開発経験"
+        ]
+      },
+      {
+        "category": "フロントエンド開発",
+        "items": [
+          "JavaScript、HTML、CSS、Vueによるフロントエンド開発の実務経験",
+          "レスポンシブデザインの実装経験"
+        ]
+      },
+      {
+        "category": "クラウド・インフラ",
+        "items": [
+          "クラウドプラットフォーム（Azure、AWS、GCP）での開発経験",
+          "Terraformを用いたインフラのコード化（IaC）経験、コード保守、リソース作成・更新の経験",
+          "WSL2でのDocker環境構築・開発経験、イメージファイル、コンポーズymlファイル作成経験"
+        ]
+      },
+      {
+        "category": "開発プロセス・自動化",
+        "items": [
+          "ソースコード管理システム（Git）の実務経験",
+          "CI/CDパイプラインを利用経験、パイプラインコードの保守経験",
+          "AgileやScrumなどの開発手法の実務経験",
+          "Selenium用いたテスト自動化経験"
+        ]
+      },
+      {
+        "category": "学習能力",
+        "items": [
+          "新しい技術の学習能力と知識共有",
+          "生成AIを使った業務効率化提案と実装経験",
+          "生成AIを使った機能開発、新規開発の経験"
+        ]
       }
     ]
   };
@@ -94,4 +160,64 @@ const aboutMeData = {
 
     // section に追加
     section.appendChild(newRowDiv);
+
+    // 職務概要セクションを追加
+    if (aboutMeData.careerSummary && aboutMeData.careerSummary.length > 0) {
+      const summaryDiv = document.createElement('div');
+      summaryDiv.className = 'mt-5';
+
+      const summaryTitle = document.createElement('h3');
+      summaryTitle.className = 'text-primary mb-4';
+      summaryTitle.textContent = '職務概要';
+      summaryDiv.appendChild(summaryTitle);
+
+      const summaryContentDiv = document.createElement('div');
+      summaryContentDiv.className = 'stack-g p-3 mb-4';
+
+      aboutMeData.careerSummary.forEach(paragraph => {
+        const p = document.createElement('p');
+        p.className = 'mb-3';
+        p.textContent = paragraph;
+        summaryContentDiv.appendChild(p);
+      });
+
+      summaryDiv.appendChild(summaryContentDiv);
+      section.appendChild(summaryDiv);
+    }
+
+    // スキルセクションを追加
+    if (aboutMeData.skills && aboutMeData.skills.length > 0) {
+      const skillsDiv = document.createElement('div');
+      skillsDiv.className = 'mt-5';
+
+      const skillsTitle = document.createElement('h3');
+      skillsTitle.className = 'text-primary mb-4';
+      skillsTitle.textContent = '生かせる経験知識・技術';
+      skillsDiv.appendChild(skillsTitle);
+
+      aboutMeData.skills.forEach(skillCategory => {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'mb-4 stack-g p-3';
+
+        const categoryTitle = document.createElement('h4');
+        categoryTitle.className = 'text-primary mb-3';
+        categoryTitle.textContent = `■${skillCategory.category}`;
+        categoryDiv.appendChild(categoryTitle);
+
+        const skillList = document.createElement('ul');
+        skillList.className = 'mb-0';
+
+        skillCategory.items.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.className = 'mb-2';
+          listItem.textContent = item;
+          skillList.appendChild(listItem);
+        });
+
+        categoryDiv.appendChild(skillList);
+        skillsDiv.appendChild(categoryDiv);
+      });
+
+      section.appendChild(skillsDiv);
+    }
   }
