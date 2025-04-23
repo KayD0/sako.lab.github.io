@@ -7,11 +7,11 @@ const aboutMeData = {
       },
       {
         "label": "誕生日",
-        "value": "9 June 1920"
+        "value": "1993/6/4(31歳)"
       },
       {
         "label": "学歴",
-        "value": "尾道市立大学"
+        "value": "尾道市立大学-経済情報学部"
       },
       {
         "label": "経験年数",
@@ -123,43 +123,6 @@ const aboutMeData = {
     });
 
     section.appendChild(rowDiv);
-
-    // 新しい要素を生成
-    const newRowDiv = document.createElement('div');
-    newRowDiv.className = 'row g-4';
-
-    const colDiv = document.createElement('div');
-    colDiv.className = 'col-md-4 col-lg-6 col-xl-4';
-
-    const flexDiv = document.createElement('div');
-    flexDiv.className = 'd-flex bg-secondary p-4';
-
-    const h1Element = document.createElement('h1');
-    h1Element.className = 'flex-shrink-0 display-5 text-primary mb-0';
-    h1Element.setAttribute('data-toggle', 'counter-up');
-    h1Element.textContent = '8';
-
-    const psDiv = document.createElement('div');
-    psDiv.className = 'ps-3';
-
-    const pElement = document.createElement('p');
-    pElement.className = 'mb-0';
-    pElement.textContent = 'Years of';
-
-    const h5Element = document.createElement('h5');
-    h5Element.className = 'mb-0';
-    h5Element.textContent = 'Experience';
-
-    // 要素の構造を組み立てる
-    psDiv.appendChild(pElement);
-    psDiv.appendChild(h5Element);
-    flexDiv.appendChild(h1Element);
-    flexDiv.appendChild(psDiv);
-    colDiv.appendChild(flexDiv);
-    newRowDiv.appendChild(colDiv);
-
-    // section に追加
-    section.appendChild(newRowDiv);
 
     // 職務概要セクションを追加
     if (aboutMeData.careerSummary && aboutMeData.careerSummary.length > 0) {

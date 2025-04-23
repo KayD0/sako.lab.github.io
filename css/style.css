@@ -30,7 +30,7 @@ body {
   height: 100%;
   margin: 0;
   background-color: var(--dg);
-  font-family: 'Aldrich', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   color: var(--lg);
   transition: color 1s;
   animation: colorshift 5s infinite;
@@ -96,7 +96,7 @@ body {
   background-color: var(--dg) !important;
   box-shadow: 1px 1px 1px var(--p) inset;
   font-size: 1em;
-  font-family: 'Aldrich', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: bold;
   color: var(--lg);
   outline: none;
@@ -306,7 +306,7 @@ input {
   background-color: var(--dg) !important;
   box-shadow: 1px 1px 1px var(--p) inset;
   font-size: 1em;
-  font-family: 'Aldrich', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: bold;
   color: var(--lg);
   outline: none;
@@ -396,7 +396,7 @@ input:hover {
 .table th {
   color: var(--p) !important;
   border-color: var(--p) !important;
-  font-family: 'Aldrich', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -404,7 +404,7 @@ input:hover {
 
 .table td {
   border-color: var(--p) !important;
-  font-family: 'Aldrich', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .table-dark {
@@ -438,7 +438,7 @@ input:hover {
   color: var(--lg);
   border: none;
   border-radius: 5px 5px 0 0;
-  font-family: 'Aldrich', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: bold;
   padding: 10px 20px;
   box-shadow: 1px 1px 1px var(--p) inset;
