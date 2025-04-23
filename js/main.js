@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (spinnerElement) {
                 spinnerElement.classList.remove('show');
             }
-        }, 1);
+        }, 1000);
     };
     spinner();
 

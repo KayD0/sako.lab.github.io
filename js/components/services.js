@@ -7,9 +7,19 @@ const servicesData = {
       "description": "I am skilled in developing applications using C# and .NET."
     },
     {
-      "icon": "fa-laptop-code",
+      "icon": "fa-code",
       "title": "Web Design",
       "description": "I also create websites using WordPress."
+    },
+    {
+      "icon": "fa-database",
+      "title": "Database Design",
+      "description": "Experienced with SQL Server, MySQL, and Oracle database design and optimization."
+    },
+    {
+      "icon": "fa-cloud",
+      "title": "Cloud Services",
+      "description": "Working with AWS and Azure cloud platforms for scalable solutions."
     }
   ]
 };
