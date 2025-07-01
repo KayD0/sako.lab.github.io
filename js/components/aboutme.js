@@ -7,7 +7,7 @@ const aboutMeData = {
       },
       {
         "label": "誕生日",
-        "value": "1993/6/4(31歳)"
+        "value": "1993/6/4(32歳)"
       },
       {
         "label": "学歴",
@@ -15,7 +15,7 @@ const aboutMeData = {
       },
       {
         "label": "経験年数",
-        "value": "8 年"
+        "value": "10 年"
       },
       {
         "label": "Email",
@@ -47,7 +47,10 @@ const aboutMeData = {
           "C#での一人称での作業可能な実務経験（5年）",
           "ASP.NET MVCやASP.NET Coreを使用したWebアプリケーションの開発経験",
           "クリーンアーキテクチャの理解と実践経験",
-          "テストコード実装経験"
+          "テストコード実装経験",
+          "新技術やサードパーティー製品の技術調査",
+          "脆弱性パッケージ監視半自動化の知見",
+          "開発企画経験"
         ]
       },
       {
@@ -69,7 +72,9 @@ const aboutMeData = {
       {
         "category": "クラウド・インフラ",
         "items": [
-          "クラウドプラットフォーム（Azure、AWS、GCP）での開発経験",
+          "Azureでの開発経験（Dev Ops、Pipeline、Key Vault、App Service、Container App、Functions(Linux、Windows)、SQL Database、CosmosDB、AI Search、Open AI、Storage Account）",
+          "AWSでの開発経験（Secret Manager、SQS、ECS、ECR、Lambda、Bedrock、Cloudformation）",
+          "GCPでの開発経験（Cloud Run、Cloud Function、Storage）",
           "Terraformを用いたインフラのコード化（IaC）経験、コード保守、リソース作成・更新の経験",
           "WSL2でのDocker環境構築・開発経験、イメージファイル、コンポーズymlファイル作成経験"
         ]
