@@ -1,154 +1,97 @@
 import { generateAboutMeHTML } from './components/aboutme.js';
 import { generateSkillsHTML } from './components/skills.js';
 import { generateExperienceHTML } from './components/experiences.js';
-// import { generateSkillsHTML } from './components/skills.js';
 
-document.addEventListener('DOMContentLoaded', function () {
-    "use strict";
-    
-    generateAboutMeHTML();
-    generateSkillsHTML();
-    generateExperienceHTML();
+const os = document.querySelector('[data-winfolio]');
 
-    // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            var spinnerElement = document.getElementById('spinner');
-            if (spinnerElement) {
-                spinnerElement.classList.remove('show');
-            }
-        }, 1000);
-    };
-    spinner();
+if (os) {
+  generateAboutMeHTML();
+  generateSkillsHTML();
+  generateExperienceHTML();
 
-    // Initiate the wowjs
-    new WOW().init(); // WOW.js自体はjQuery依存ではないため、そのまま使用可能です。
+  const win = os.querySelector('[data-window]');
+  const start = os.querySelector('[data-start]');
+  const dialog = os.querySelector('[data-dialog]');
+  const powerScene = os.querySelector('[data-power-scene]');
+  const powerHint = os.querySelector('[data-power-hint]');
+  const bootLog = os.querySelector('[data-boot-log]');
+  const bootProgress = os.querySelector('[data-boot-progress]');
+  const names = { profile: 'My Profile', resume: 'Resume.doc', projects: 'My Projects', skills: 'Dev Skills', contact: 'Contact.exe' };
+  let current = 'profile';
+  let previous = 'profile';
 
-    // Facts counter
-    var counters = document.querySelectorAll('[data-toggle="counter-up"]');
-    counters.forEach(function(counter) {
-        var countUp = new CountUp(counter, 0, parseInt(counter.innerText), 0, 2);
-        countUp.start();
-    });
+  const openApp = (name) => {
+    if (!names[name]) return;
+    previous = current;
+    current = name;
+    win.classList.add('active');
+    start.classList.remove('active');
+    dialog.classList.remove('active');
+    os.querySelectorAll('[data-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === name));
+    os.querySelectorAll('aside [data-open]').forEach((button) => button.classList.toggle('selected', button.dataset.open === name));
+    os.querySelector('[data-title]').textContent = `${names[name]} - Portfolio Explorer`;
+    os.querySelector('[data-task-title]').textContent = names[name];
+    os.querySelector('[data-address]').value = `C:\\Portfolio\\${names[name].replaceAll(' ', '_')}`;
+  };
 
-    // Typed Initiate
-    var typedTextOutput = document.querySelector('.typed-text-output');
-    if (typedTextOutput) {
-        var typedStrings = document.querySelector('.typed-text').innerText;
-        new Typed('.typed-text-output', {
-            strings: typedStrings.split(', '),
-            typeSpeed: 100,
-            backSpeed: 20,
-            smartBackspace: false,
-            loop: true
-        });
-    }
+  os.querySelectorAll('[data-open]').forEach((button) => button.addEventListener('click', () => openApp(button.dataset.open)));
+  os.querySelector('[data-start-button]').addEventListener('click', () => start.classList.toggle('active'));
+  os.querySelector('[data-close]').addEventListener('click', () => win.classList.remove('active'));
+  os.querySelector('[data-minimize]').addEventListener('click', () => win.classList.remove('active'));
+  os.querySelector('[data-maximize]').addEventListener('click', () => win.classList.toggle('maximized'));
+  os.querySelector('[data-task]').addEventListener('click', () => win.classList.toggle('active'));
+  os.querySelector('[data-back]').addEventListener('click', () => openApp(previous));
+  os.querySelector('[data-shutdown]').addEventListener('click', () => { start.classList.remove('active'); dialog.classList.add('active'); });
+  os.querySelector('[data-cancel]').addEventListener('click', () => dialog.classList.remove('active'));
+  const finishShutdown = (autoBoot = false) => {
+    os.classList.add('shutting-down');
+    start.classList.remove('active');
+    dialog.classList.remove('active');
+    window.setTimeout(() => {
+      powerScene.hidden = false;
+      os.classList.remove('shutting-down');
+      os.classList.add('powered-off');
+      powerHint.textContent = autoBoot ? 'RESTARTING...' : 'POWERボタンを押して起動';
+      bootLog.textContent = autoBoot ? 'RESTART SIGNAL RECEIVED' : 'SYSTEM HALTED';
+      bootProgress.style.width = '0%';
+      if (autoBoot) window.setTimeout(bootComputer, 650);
+    }, 900);
+  };
 
-    // Smooth scrolling to section
-    var scrollButtons = document.querySelectorAll(".btn-scroll");
-    scrollButtons.forEach(function (button) {
-        button.addEventListener('click', function (event) {
-            if (this.hash !== "") {
-                event.preventDefault();
-                var targetElement = document.querySelector(this.hash);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
+  const bootComputer = () => {
+    if (os.classList.contains('booting')) return;
+    os.classList.add('booting');
+    powerHint.textContent = 'BOOTING SAKO OS 98...';
+    bootLog.textContent = 'CHECKING MEMORY... OK';
+    bootProgress.style.width = '18%';
+    window.setTimeout(() => { bootLog.textContent = 'LOADING SYSTEM DRIVERS...'; bootProgress.style.width = '48%'; }, 650);
+    window.setTimeout(() => { bootLog.textContent = 'STARTING PORTFOLIO EXPLORER...'; bootProgress.style.width = '78%'; }, 1400);
+    window.setTimeout(() => { bootLog.textContent = 'WELCOME TO SAKO OS'; bootProgress.style.width = '100%'; }, 2200);
+    window.setTimeout(() => {
+      os.classList.remove('powered-off');
+      os.classList.add('zooming-in');
+      powerHint.textContent = '';
+    }, 2700);
+    window.setTimeout(() => {
+      os.classList.remove('powered-off', 'booting', 'zooming-in');
+      powerScene.hidden = true;
+      openApp('profile');
+    }, 3900);
+  };
 
-    // Skills
-    var skills = document.querySelectorAll('.skill');
-    skills.forEach(function (skill) {
-        var waypoint = new Waypoint({
-            element: skill,
-            handler: function () {
-                var progressBars = skill.querySelectorAll('.progress .progress-bar');
-                progressBars.forEach(function (progressBar) {
-                    progressBar.style.width = progressBar.getAttribute('aria-valuenow') + '%';
-                });
-            },
-            offset: '80%'
-        });
-    });
+  os.querySelector('[data-confirm-shutdown]').addEventListener('click', () => finishShutdown(false));
+  os.querySelector('[data-reboot]').addEventListener('click', () => finishShutdown(true));
+  os.querySelector('[data-power-button]').addEventListener('click', bootComputer);
+  os.querySelectorAll('[data-menu]').forEach((button) => button.addEventListener('click', (event) => {
+    const popup = os.querySelector('[data-popup]');
+    popup.textContent = button.dataset.menu === 'help' ? 'SAKO OS 98 Portfolio / Build 2026' : 'No additional commands.';
+    popup.style.left = `${event.target.offsetLeft + 8}px`;
+    popup.style.top = '76px';
+    popup.classList.toggle('active');
+  }));
 
-    // Portfolio isotope and filter
-    var portfolioContainer = document.querySelector('.portfolio-container');
-    var portfolioFilters = document.querySelectorAll('#portfolio-flters li');
-    if (portfolioContainer && portfolioFilters) {
-        var iso = new Isotope(portfolioContainer, {
-            itemSelector: '.portfolio-item',
-            layoutMode: 'fitRows'
-        });
-
-        portfolioFilters.forEach(function (filter) {
-            filter.addEventListener('click', function () {
-                document.querySelector('#portfolio-flters li.active').classList.remove('active');
-                filter.classList.add('active');
-                iso.arrange({ filter: filter.getAttribute('data-filter') });
-            });
-        });
-    }
-
-    // Testimonials carousel
-    var testimonialCarousel = document.querySelector(".testimonial-carousel");
-    if (testimonialCarousel) {
-        var owlCarousel = new OwlCarousel(testimonialCarousel, {
-            autoplay: true,
-            smartSpeed: 1500,
-            dots: true,
-            loop: true,
-            items: 1
-        });
-    }
-
-    // Back to top button
-    var backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 100) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-
-    backToTop.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // Tab functionality
-    const tabLinks = document.querySelectorAll('.nav-link');
-    tabLinks.forEach(function(tabLink) {
-        tabLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all tabs
-            tabLinks.forEach(function(link) {
-                link.classList.remove('active');
-                link.setAttribute('aria-selected', 'false');
-            });
-            
-            // Add active class to clicked tab
-            this.classList.add('active');
-            this.setAttribute('aria-selected', 'true');
-            
-            // Hide all tab content
-            const tabContents = document.querySelectorAll('.tab-pane');
-            tabContents.forEach(function(content) {
-                content.classList.remove('show', 'active');
-            });
-            
-            // Show the selected tab content
-            const targetId = this.getAttribute('data-bs-target');
-            const targetContent = document.querySelector(targetId);
-            targetContent.classList.add('show', 'active');
-        });
-    });
-});
+  const clock = os.querySelector('[data-clock]');
+  const tick = () => { clock.textContent = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }); };
+  tick();
+  window.setInterval(tick, 1000);
+}

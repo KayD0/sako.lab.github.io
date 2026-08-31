@@ -1,121 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Sako.Lab</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Sako.Lab — C# / .NET backend engineer portfolio">
+  <meta name="theme-color" content="#008080">
+  <title>Sako.Lab | Engineer Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <article class="winfolio powered-off" data-winfolio>
+    <section class="desktop">
+      <div class="desktop-brand" aria-hidden="true"><span>SAKO</span><b>LAB 98</b><small>ENGINEER WORKSTATION</small></div>
+      <nav class="desktop-icons" aria-label="デスクトップ">
+        <button data-open="profile"><i>PC</i><span>My Profile</span></button>
+        <button data-open="resume"><i>CV</i><span>Resume</span></button>
+        <button data-open="projects"><i>DIR</i><span>Projects</span></button>
+        <button data-open="skills"><i>DEV</i><span>Skills</span></button>
+        <button data-open="contact"><i>@</i><span>Contact</span></button>
+      </nav>
+      <section class="window active maximized" data-window aria-label="Portfolio Explorer">
+        <header><span><i>PC</i><b data-title>My Profile - Portfolio Explorer</b></span><div><button data-minimize aria-label="最小化">_</button><button data-maximize aria-label="最大化">□</button><button data-close aria-label="閉じる">×</button></div></header>
+        <nav aria-label="ウィンドウメニュー"><button data-menu="file">File</button><button data-menu="view">View</button><button data-menu="help">Help</button></nav>
+        <div class="toolbar"><button data-back aria-label="戻る">←</button><label for="address">Address</label><input id="address" data-address value="C:\Portfolio\My_Profile" readonly></div>
+        <main>
+          <aside>
+            <h2>Portfolio</h2><p>Choose a folder to explore.</p>
+            <button class="selected" data-open="profile">My Profile</button>
+            <button data-open="resume">Resume</button>
+            <button data-open="projects">Projects</button>
+            <button data-open="skills">Skills</button>
+            <button data-open="contact">Contact</button>
+            <small>SAKO.LAB<br>C# / .NET ENGINEER</small>
+          </aside>
+          <div class="content">
+            <article class="panel active" data-panel="profile">
+              <img class="avatar" src="img/profile.jpg" alt="Sakoのプロフィール写真">
+              <small>C:\PORTFOLIO\PROFILE.TXT</small>
+              <h1>HELLO,<br>I'M <em>SAKO.</em></h1>
+              <p>C# / .NETを軸に、複雑な業務をシンプルで堅牢な仕組みへ変えるバックエンドエンジニアです。</p>
+              <dl><dt>Specialty</dt><dd>Backend / Web Application</dd><dt>Core</dt><dd>C# / .NET / SQL</dd><dt>Cloud</dt><dd>Azure / AWS / GCP</dd><dt>Location</dt><dd>Japan</dd></dl>
+            </article>
+            <article class="panel data-panel" data-panel="resume"><small>C:\PORTFOLIO\RESUME.DOC</small><div id="about-me-section"></div></article>
+            <article class="panel data-panel" data-panel="projects"><small>C:\PORTFOLIO\PROJECTS — WORK HISTORY</small><div id="experience-section"></div></article>
+            <article class="panel data-panel" data-panel="skills"><small>SYSTEM PROPERTIES / DEVELOPMENT ENVIRONMENT</small><div id="skills-section"></div></article>
+            <article class="panel contact" data-panel="contact"><small>CONTACT.EXE / CHANNEL READY</small><div class="mail-icon">@</div><h2>Let's build something.</h2><p>技術やプロダクトについてのご相談は、GitHubからお気軽にどうぞ。</p><dl><dt>Channel</dt><dd>GitHub</dd><dt>Focus</dt><dd>Backend / Cloud / Product</dd><dt>Status</dt><dd>KEEP BUILDING</dd></dl><a href="https://github.com/sako-lab" target="_blank" rel="noreferrer">Open GitHub</a></article>
+          </div>
+        </main>
+        <footer><span data-count>5 object(s)</span><span>My Computer</span></footer>
+      </section>
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap" rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4 sticky-lg-top vh-100">
-                    <div class="d-flex flex-column h-100 text-center overflow-auto stack-g">
-                        <img class="w-100 img-fluid mb-4 profile-img" src="img/profile.jpg" alt="Image">
-                        <h1 class="text-primary mt-2">畑迫 睦和</h1>
-                        <div class="mb-4" style="height: 22px;">
-                            <h4 class="typed-text-output d-inline-block text-light"></h4>
-                            <div class="typed-text d-none">C#, Backend Developer, Front End Developer</div>
-                        </div>
-                        <div class="d-flex justify-content-center mt-auto mb-3">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <!-- Tab Navigation -->
-                    <div class="tab-navigation mb-4 section-content">
-                        <ul class="nav nav-tabs cyberpunk-tabs" id="content-tabs" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-content" type="button" role="tab" aria-controls="about-content" aria-selected="true">職務概要</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills-content" type="button" role="tab" aria-controls="skills-content" aria-selected="false">スキル</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience-content" type="button" role="tab" aria-controls="experience-content" aria-selected="false">プロジェクト</button>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Tab Content -->
-                    <div class="tab-content" id="content-tabs-content">
-                        <div class="tab-pane fade show active" id="about-content" role="tabpanel" aria-labelledby="about-tab">
-                            <section id="about-me-section" class="py-5 wow fadeInUp section-content" data-wow-delay="0.1s">
-                            </section>
-                        </div>
-                        <div class="tab-pane fade" id="skills-content" role="tabpanel" aria-labelledby="skills-tab">
-                            <section id="skills-section" class="py-5 wow fadeInUp section-content" data-wow-delay="0.1s">
-                            </section>
-                        </div>
-                        <div class="tab-pane fade" id="experience-content" role="tabpanel" aria-labelledby="experience-tab">
-                            <section id="experience-section" class="py-5 wow fadeInUp section-content" data-wow-delay="0.1s">
-                            </section>
-                        </div>
-                    </div>
-                    <!-- Footer Start -->
-                    <!-- Footer End -->
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-        <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
-
-        <!-- Template Javascript -->
-        <script type="module" src="js/main.js"></script>
-    </body>
+      <section class="start-menu" data-start><strong>SAKO <i>98</i></strong><div><button data-open="profile"><i>PC</i>Profile</button><button data-open="resume"><i>CV</i>Resume</button><button data-open="projects"><i>DIR</i>Projects</button><button data-open="skills"><i>DEV</i>Skills</button><button data-open="contact"><i>@</i>Contact</button><hr><button data-reboot><i>↻</i>Restart...</button><button data-shutdown><i>OFF</i>Shut Down...</button></div></section>
+      <section class="dialog" data-dialog role="dialog" aria-modal="true" aria-labelledby="shutdown-title"><header id="shutdown-title">Shut Down SAKO OS</header><p>Shut down this portfolio computer?</p><label><input type="radio" checked> Shut down the computer</label><footer><button data-confirm-shutdown>OK</button><button data-cancel>Cancel</button></footer></section>
+      <div class="popup" data-popup></div>
+    </section>
+    <footer class="taskbar"><button data-start-button><b>▣ Start</b></button><button class="task" data-task><span data-task-title>My Profile</span></button><div class="tray"><span>NET</span><time data-clock>00:00</time></div></footer>
+    <section class="power-scene" data-power-scene aria-label="SAKO PC is powered off">
+      <div class="pc-setup">
+        <div class="monitor"><div class="monitor-screen" data-monitor-screen><div class="boot-logo">SAKO<small>LAB 98</small></div><div class="boot-log" data-boot-log>SYSTEM HALTED</div><div class="boot-progress"><i data-boot-progress></i></div></div><div class="monitor-neck"></div><div class="monitor-foot"></div></div>
+        <div class="pc-tower"><div class="drive"></div><b>SAKO</b><small>WORKSTATION</small><button class="power-button" data-power-button aria-label="パソコンの電源を入れる"><i></i></button></div>
+      </div>
+      <p data-power-hint>POWERボタンを押して起動</p>
+    </section>
+  </article>
+  <script type="module" src="js/main.js"></script>
+</body>
 </html>
