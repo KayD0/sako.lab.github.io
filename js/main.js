@@ -6,7 +6,9 @@ const os = document.querySelector('[data-winfolio]');
 
 if (os) {
   generateAboutMeHTML();
-  generateSkillsHTML();
+  generateSkillsHTML().catch((error) => {
+    document.getElementById('skills-section').textContent = `Skills could not be loaded: ${error.message}`;
+  });
   generateExperienceHTML();
 
   const win = os.querySelector('[data-window]');
@@ -16,7 +18,7 @@ if (os) {
   const powerHint = os.querySelector('[data-power-hint]');
   const bootLog = os.querySelector('[data-boot-log]');
   const bootProgress = os.querySelector('[data-boot-progress]');
-  const names = { profile: 'My Profile', resume: 'Resume.doc', projects: 'My Projects', skills: 'Dev Skills', contact: 'Contact.exe' };
+  const names = { profile: 'My Profile', resume: 'Resume.doc', projects: 'My Projects', works: 'Works', skills: 'Dev Skills', contact: 'Contact.exe' };
   let current = 'profile';
   let previous = 'profile';
 

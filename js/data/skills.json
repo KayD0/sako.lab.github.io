@@ -1,0 +1,91 @@
+{
+  "title": "Skills",
+  "categories": [
+    {
+      "name": "業界",
+      "skills": [
+        { "name": "EC業", "years": "3年", "level": "知識がある", "starred": true },
+        { "name": "決済代行業", "years": "1年", "level": "知識がある", "starred": true },
+        { "name": "倉庫業", "years": "2年", "level": "知識がある", "starred": true }
+      ]
+    },
+    {
+      "name": "言語",
+      "skills": [
+        { "name": "C#", "years": "6年", "level": "業務で即戦力になれる", "starred": true },
+        { "name": "SQL", "years": "5年", "level": "業務で即戦力になれる", "starred": true },
+        { "name": "Typescript", "years": "2年", "level": "一人称で作業可能", "starred": true },
+        { "name": "Javascript", "years": "2年", "level": "一人称で作業可能", "starred": true },
+        { "name": "GAS", "years": "2年", "level": "業務で即戦力になれる", "starred": true },
+        { "name": "VBA", "years": "1年", "level": "一人称で作業可能", "starred": true },
+        { "name": "Python", "years": "1年", "level": "一人称で作業可能", "starred": true },
+        { "name": "Java", "years": "1年", "level": "調べながらであれば作業可能", "starred": false },
+        { "name": "Go", "years": "1年未満", "level": "調べながらであれば作業可能", "starred": false },
+        { "name": "Rust", "years": "1年未満", "level": "調べながらであれば作業可能", "starred": false }
+      ]
+    },
+    {
+      "name": "FW",
+      "skills": [
+        { "name": ".NET (6, 8)", "years": "3年", "level": "業務で即戦力になれる", "starred": true },
+        { "name": ".NET Core (3.1)", "years": "2年", "level": "業務で即戦力になれる", "starred": true },
+        { "name": ".NET Framework (4.5, 4.8)", "years": "3年", "level": "業務で即戦力になれる", "starred": true },
+        { "name": "Vue", "years": "1年", "level": "一人称で作業可能", "starred": true },
+        { "name": "React", "years": "1年", "level": "一人称で作業可能", "starred": true },
+        { "name": "Next", "years": "1年", "level": "一人称で作業可能", "starred": true },
+        { "name": "Flask", "years": "1年未満", "level": "調べながら作業可能、個人開発でFirebaseを利用した認証付きAPIの作成など", "starred": false }
+      ]
+    },
+    {
+      "name": "DB",
+      "skills": [
+        { "name": "SQL Server", "years": "4年", "level": "構築からチューニングまで対応できる", "starred": true },
+        { "name": "Cosmos DB", "years": "1年未満", "level": "構築からチューニングまで対応できる", "starred": true },
+        { "name": "MySQL", "years": "1年", "level": "テーブル設計可能", "starred": true },
+        { "name": "Oracle", "years": "2年", "level": "テーブル設計可能", "starred": true },
+        { "name": "Cache", "years": "1年未満", "level": "知識がある", "starred": true }
+      ]
+    },
+    {
+      "name": "OS",
+      "skills": [
+        { "name": "Windows", "years": "8年", "level": "インストールから環境構築、設定、開発が可能", "starred": true },
+        { "name": "macOS", "years": "1年未満", "level": "簡単なコマンドの入力ができる", "starred": true },
+        { "name": "Debian", "years": "2年", "level": "インストールから環境構築、設定、開発が可能", "starred": true }
+      ]
+    },
+    {
+      "name": "クラウド等",
+      "skills": [
+        { "name": "Azure", "years": "2年6ヶ月", "level": "Terraformでのリソース構築・保守、CLIでのリソース作成。Functions、App Service、Container Apps、Application Insights、Storage Account（Blob・Queue）、Key Vault、SQL Database、SQL Server、MySQL、Cosmos DB、OpenAI、AI Search、Entra ID、AD、AKS、DevOpsの開発経験", "starred": true },
+        { "name": "AWS", "years": "1年", "level": "CloudFormation保守、Keyコンテナーリソース利用。Lambda、Aurora、S3、Secrets Manager、Bedrockの開発経験", "starred": true },
+        { "name": "GCP", "years": "1年", "level": "Cloud Runの開発経験、Terraform作成", "starred": true },
+        { "name": "Auth0", "years": "1年未満", "level": "調べながら作業可能、個人開発の認証機能に使用", "starred": false },
+        { "name": "Firebase", "years": "1年未満", "level": "調べながら作業可能、個人開発の認証機能に使用", "starred": false }
+      ]
+    },
+    {
+      "name": "AI関連",
+      "skills": [
+        { "name": "Claude Code", "years": "1年", "level": "使用に当たって問題なし", "starred": true },
+        { "name": "GitHub Copilot", "years": "2年", "level": "使用に当たって問題なし", "starred": true },
+        { "name": "Devin", "years": "1年", "level": "使用に当たって問題なし", "starred": true },
+        { "name": "ChatGPT", "years": "4年", "level": "使用に当たって問題なし", "starred": true },
+        { "name": "Gemini", "years": "2年", "level": "使用に当たって問題なし", "starred": true }
+      ]
+    },
+    {
+      "name": "その他",
+      "skills": [
+        { "name": "Git", "years": "5年", "level": "使用に当たって問題なし", "starred": true },
+        { "name": "GitHub", "years": "2年", "level": "使用に当たって問題なし", "starred": true },
+        { "name": "Docker", "years": "2年", "level": "インストールと開発用のDBコンテナイメージ作成・起動等", "starred": true },
+        { "name": "Terraform", "years": "1年未満", "level": "調べながら作業可能、既存コードの保守など", "starred": true },
+        { "name": "WSL2", "years": "2年", "level": "Debianのインストールで使用", "starred": true },
+        { "name": "Playwright", "years": "1年未満", "level": "調べながらであれば作業可能", "starred": true },
+        { "name": "Selenium", "years": "1年未満", "level": "調べながらであれば作業可能", "starred": true },
+        { "name": "Tauri", "years": "1年未満", "level": "Reactを使ったデスクトップアプリの作成", "starred": false }
+      ]
+    }
+  ]
+}
