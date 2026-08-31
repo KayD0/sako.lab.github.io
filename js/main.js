@@ -62,6 +62,8 @@ if (os) {
 
   const bootComputer = () => {
     if (os.classList.contains('booting')) return;
+    win.classList.remove('active', 'maximized', 'opening');
+    os.classList.remove('handoff-background', 'desktop-starting', 'taskbar-ready', 'desktop-items-ready', 'explorer-ready');
     os.classList.add('booting');
     powerHint.textContent = 'BOOTING SAKO OS 98...';
     bootLog.textContent = 'CHECKING MEMORY... OK';
@@ -70,15 +72,25 @@ if (os) {
     window.setTimeout(() => { bootLog.textContent = 'STARTING PORTFOLIO EXPLORER...'; bootProgress.style.width = '78%'; }, 1400);
     window.setTimeout(() => { bootLog.textContent = 'WELCOME TO SAKO OS'; bootProgress.style.width = '100%'; }, 2200);
     window.setTimeout(() => {
-      os.classList.remove('powered-off');
-      os.classList.add('zooming-in');
+      os.classList.add('handoff-background');
       powerHint.textContent = '';
     }, 2700);
     window.setTimeout(() => {
-      os.classList.remove('powered-off', 'booting', 'zooming-in');
+      os.classList.remove('powered-off', 'booting', 'handoff-background');
+      os.classList.add('desktop-starting');
       powerScene.hidden = true;
+    }, 3400);
+    window.setTimeout(() => os.classList.add('taskbar-ready'), 3900);
+    window.setTimeout(() => os.classList.add('desktop-items-ready'), 4600);
+    window.setTimeout(() => {
+      os.classList.add('explorer-ready');
       openApp('profile');
-    }, 3900);
+      win.classList.add('opening');
+    }, 5400);
+    window.setTimeout(() => {
+      os.classList.remove('desktop-starting', 'taskbar-ready', 'desktop-items-ready', 'explorer-ready');
+      win.classList.remove('opening');
+    }, 6000);
   };
 
   os.querySelector('[data-confirm-shutdown]').addEventListener('click', () => finishShutdown(false));
