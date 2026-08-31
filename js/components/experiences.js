@@ -2,6 +2,68 @@ const experienceData = {
   "title": "プロジェクト",
   "companies": [
     {
+      "name": "個人事業主（株式会社ROBOT PAYMENTの開発業務に従事）",
+      "period": "2025年7月 〜 現在",
+      "business": "インターネット決済代行サービス",
+      "capital": "2億4,400万円",
+      "sales": "32億5,600万円",
+      "employees": "128人",
+      "listed": "グロース市場上場",
+      "projects": [
+        {
+          "period": "2025年7月 〜 現在",
+          "name": "QR決済機能導入プロジェクト",
+          "overview": "決済システムの利用者獲得に向け、新しい決済方法を導入するプロジェクト。",
+          "tasks": [
+            "技術調査・技術検証",
+            "影響範囲調査",
+            "タスク作成・管理",
+            "基本設計書作成",
+            "実装",
+            "コードレビュー、設計書レビュー、テスト仕様書レビュー",
+            "【課題・取組】PDMへのヒアリングおよびGMO PGの仕様調査を通じ、要件整理と基本設計を実施",
+            "【課題・取組】決済受付API、加盟店向け決済設定、決済データ参照機能を実装",
+            "【課題・取組】レビューで決済ブランド名の誤りと決済IDの重複登録リスクを発見し、テストケースの追加・修正を提案して品質向上に貢献"
+          ],
+          "phases": ["要件定義", "基本設計", "製造", "単体テスト", "結合テスト", "総合テスト"],
+          "environment": {
+            "os": ["Windows 11"],
+            "languages": ["C#"],
+            "frameworks": [".NET 8", ".NET Framework 4.8", ".NET Standard 2.0", "Web Forms"],
+            "cloud": ["AWS"],
+            "ai": ["GitHub Copilot", "Claude Code", "Devin", "Gemini"],
+            "others": ["Git", "GitHub", "GitHub Actions", "Autify", "Notion"]
+          },
+          "role": "メンバー",
+          "teamSize": "5名"
+        },
+        {
+          "period": "2025年7月 〜 現在",
+          "name": "決済システム機能拡張・保守開発プロジェクト",
+          "overview": "決済業務の運用改善に伴い、システムの設計・修正・保守開発を行うプロジェクト。",
+          "tasks": [
+            "影響範囲調査",
+            "タスク作成・管理",
+            "基本設計書作成",
+            "実装",
+            "コードレビュー、設計書レビュー、テスト仕様書レビュー",
+            "【課題・取組】PDMへのヒアリングおよびGMO PGの仕様調査を通じ、要件整理と基本設計を実施"
+          ],
+          "phases": ["要件定義", "基本設計", "製造", "単体テスト", "結合テスト", "総合テスト"],
+          "environment": {
+            "os": ["Windows 11"],
+            "languages": ["C#"],
+            "frameworks": [".NET Framework 4.8", ".NET Standard 2.0", "Web Forms"],
+            "cloud": ["AWS"],
+            "ai": ["GitHub Copilot", "Claude Code", "Devin", "Gemini"],
+            "others": ["Git", "GitHub", "GitHub Actions", "Autify", "Notion"]
+          },
+          "role": "メンバー",
+          "teamSize": "15名"
+        }
+      ]
+    },
+    {
       "name": "個人事業主（一般社団法人フリーランス連盟の開発業務に従事）",
       "period": "2024年12月 ～ 現在",
       "business": "",
