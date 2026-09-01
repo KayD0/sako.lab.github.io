@@ -1,6 +1,7 @@
 import { generateAboutMeHTML } from './components/aboutme.js';
 import { generateSkillsHTML } from './components/skills.js';
 import { generateExperienceHTML } from './components/experiences.js';
+import { initializeMinesweeper } from './components/minesweeper.js';
 
 const os = document.querySelector('[data-winfolio]');
 
@@ -10,6 +11,7 @@ if (os) {
     document.getElementById('skills-section').textContent = `Skills could not be loaded: ${error.message}`;
   });
   generateExperienceHTML();
+  initializeMinesweeper();
 
   const win = os.querySelector('[data-window]');
   const start = os.querySelector('[data-start]');
@@ -18,7 +20,7 @@ if (os) {
   const powerHint = os.querySelector('[data-power-hint]');
   const bootLog = os.querySelector('[data-boot-log]');
   const bootProgress = os.querySelector('[data-boot-progress]');
-  const names = { profile: 'My Profile', resume: 'Resume.doc', projects: 'My Projects', works: 'Works', skills: 'Dev Skills', contact: 'Contact.exe' };
+  const names = { profile: 'My Profile', resume: 'Resume.doc', projects: 'My Projects', works: 'Works', skills: 'Dev Skills', games: 'Games', contact: 'Contact.exe' };
   let current = 'profile';
   let previous = 'profile';
 

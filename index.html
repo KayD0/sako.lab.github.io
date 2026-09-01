@@ -18,6 +18,7 @@
         <button data-open="projects"><i>DIR</i><span>Projects</span></button>
         <button data-open="works"><i>DOC</i><span>Works</span></button>
         <button data-open="skills"><i>DEV</i><span>Skills</span></button>
+        <button data-open="games"><i>GAME</i><span>Games</span></button>
         <button data-open="contact"><i>@</i><span>Contact</span></button>
       </nav>
       <section class="window" data-window aria-label="Portfolio Explorer">
@@ -33,6 +34,7 @@
             <button data-open="projects">Projects</button>
             <button data-open="works">Works</button>
             <button data-open="skills">Skills</button>
+            <button data-open="games">Games</button>
             <button data-open="contact">Contact</button>
             <small>SAKO.LAB<br>C# / .NET ENGINEER</small>
           </aside>
@@ -47,13 +49,27 @@
             <article class="panel data-panel" data-panel="projects"><small>C:\PORTFOLIO\PROJECTS — WORK HISTORY</small><div id="experience-section"></div></article>
             <article class="panel works-panel" data-panel="works"><small>C:\PORTFOLIO\WORKS — 3 ITEMS</small><h2>Works</h2><div class="works-list"><article><b>01 / ORDER HUB</b><h3>EC受注・在庫連携基盤</h3><p>複数モールの注文、在庫、出荷ステータスを統合する業務システムのサンプルです。</p><span>C# / .NET 8 / SQL Server / Azure</span></article><article><b>02 / PAYMENT WATCH</b><h3>決済監視ダッシュボード</h3><p>決済処理の状態とエラー傾向を可視化し、運用調査を支援する画面のサンプルです。</p><span>TypeScript / React / Application Insights</span></article><article><b>03 / WAREHOUSE FLOW</b><h3>倉庫作業進捗システム</h3><p>入荷から出荷までの作業状況をリアルタイムで共有する管理システムのサンプルです。</p><span>C# / Web API / Azure Functions / Cosmos DB</span></article></div></article>
             <article class="panel data-panel" data-panel="skills"><small>SYSTEM PROPERTIES / DEVELOPMENT ENVIRONMENT</small><div id="skills-section"></div></article>
+            <article class="panel games-panel" data-panel="games">
+              <small>C:\PORTFOLIO\GAMES\MINESWEEPER.EXE</small>
+              <div class="minesweeper" data-minesweeper>
+                <header class="minesweeper-title"><i>GAME</i><b>Minesweeper</b></header>
+                <div class="minesweeper-menu" aria-hidden="true"><u>G</u>ame&nbsp;&nbsp; <u>H</u>elp</div>
+                <div class="minesweeper-controls">
+                  <output class="mine-counter" data-mine-count aria-label="Remaining mines">010</output>
+                  <button class="mine-reset" data-mine-reset aria-label="Start a new game">:)</button>
+                  <output class="mine-timer" data-mine-timer aria-label="Elapsed time">000</output>
+                </div>
+                <div class="mine-board" data-mine-board role="grid" aria-label="Minesweeper board"></div>
+                <p class="mine-status" data-mine-status aria-live="polite">Open every safe square. Right-click to place a flag.</p>
+              </div>
+            </article>
             <article class="panel contact" data-panel="contact"><small>CONTACT.EXE / CHANNEL READY</small><div class="mail-icon">@</div><h2>Let's build something.</h2><p>技術やプロダクトについてのご相談は、GitHubからお気軽にどうぞ。</p><dl><dt>Channel</dt><dd>GitHub</dd><dt>Focus</dt><dd>Backend / Cloud / Product</dd><dt>Status</dt><dd>KEEP BUILDING</dd></dl><a href="https://github.com/sako-lab" target="_blank" rel="noreferrer">Open GitHub</a></article>
           </div>
         </main>
-        <footer><span data-count>6 object(s)</span><span>My Computer</span></footer>
+        <footer><span data-count>7 object(s)</span><span>My Computer</span></footer>
       </section>
 
-      <section class="start-menu" data-start><strong>SAKO <i>98</i></strong><div><button data-open="profile"><i>PC</i>Profile</button><button data-open="resume"><i>CV</i>Resume</button><button data-open="projects"><i>DIR</i>Projects</button><button data-open="works"><i>DOC</i>Works</button><button data-open="skills"><i>DEV</i>Skills</button><button data-open="contact"><i>@</i>Contact</button><hr><button data-reboot><i>↻</i>Restart...</button><button data-shutdown><i>OFF</i>Shut Down...</button></div></section>
+      <section class="start-menu" data-start><strong>SAKO <i>98</i></strong><div><button data-open="profile"><i>PC</i>Profile</button><button data-open="resume"><i>CV</i>Resume</button><button data-open="projects"><i>DIR</i>Projects</button><button data-open="works"><i>DOC</i>Works</button><button data-open="skills"><i>DEV</i>Skills</button><button data-open="games"><i>GAME</i>Games</button><button data-open="contact"><i>@</i>Contact</button><hr><button data-reboot><i>↻</i>Restart...</button><button data-shutdown><i>OFF</i>Shut Down...</button></div></section>
       <section class="dialog" data-dialog role="dialog" aria-modal="true" aria-labelledby="shutdown-title"><header id="shutdown-title">Shut Down SAKO OS</header><p>Shut down this portfolio computer?</p><label><input type="radio" checked> Shut down the computer</label><footer><button data-confirm-shutdown>OK</button><button data-cancel>Cancel</button></footer></section>
       <div class="popup" data-popup></div>
     </section>
