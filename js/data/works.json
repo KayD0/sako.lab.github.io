@@ -47,11 +47,18 @@
       "technologies": ["TypeScript", "React", "Rust", "Tauri", "SQLite"]
     },
     {
-      "number": "03",
+      "number": "06",
       "code": "UI LAB",
       "title": "UIデザイン・モーションサンプル集",
       "description": "ボタン、フォーム、カーソル、画面演出などのUIサンプルを分類・検索し、動作と実装コードを確認できるデザインリファレンスサービスです。",
       "technologies": ["TypeScript", "Astro", "CSS", "Vitest"]
+    },
+    {
+      "number": "07",
+      "code": "SMART INVOICE",
+      "title": "請求書作成・管理アプリ",
+      "description": "顧客情報や請求明細を入力し、消費税と合計金額を自動計算してA4形式の請求書をPDF出力できるローカルデスクトップアプリです。",
+      "technologies": ["TypeScript", "React", "Tauri", "Vite", "jsPDF"]
     }
   ]
 }

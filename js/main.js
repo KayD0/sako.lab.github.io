@@ -70,7 +70,7 @@ if (os) {
       powerScene.hidden = false;
       os.classList.remove('shutting-down');
       os.classList.add('powered-off');
-      powerHint.textContent = autoBoot ? 'RESTARTING...' : 'POWERボタンを押して起動';
+      powerHint.textContent = autoBoot ? 'RESTARTING...' : 'POWERボタンを押す / ENTERキーで起動';
       bootLog.textContent = autoBoot ? 'RESTART SIGNAL RECEIVED' : 'SYSTEM HALTED';
       bootProgress.style.width = '0%';
       if (autoBoot) window.setTimeout(bootComputer, 650);
@@ -113,6 +113,11 @@ if (os) {
   os.querySelector('[data-confirm-shutdown]').addEventListener('click', () => finishShutdown(false));
   os.querySelector('[data-reboot]').addEventListener('click', () => finishShutdown(true));
   os.querySelector('[data-power-button]').addEventListener('click', bootComputer);
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' || powerScene.hidden || !os.classList.contains('powered-off') || os.classList.contains('booting')) return;
+    event.preventDefault();
+    bootComputer();
+  });
   os.querySelectorAll('[data-menu]').forEach((button) => button.addEventListener('click', (event) => {
     const popup = os.querySelector('[data-popup]');
     popup.textContent = button.dataset.menu === 'help' ? 'SAKO OS 98 Portfolio / Build 2026' : 'No additional commands.';
