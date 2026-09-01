@@ -25,6 +25,32 @@ export async function generateWorksHTML() {
     description.textContent = work.description;
     technologies.textContent = work.technologies.join(' / ');
     card.append(label, title, description, technologies);
+
+    if (work.githubUrl) {
+      let githubUrl;
+      try {
+        githubUrl = new URL(work.githubUrl);
+      } catch {
+        githubUrl = null;
+      }
+
+      if (githubUrl?.protocol === 'https:') {
+        const actions = document.createElement('div');
+        actions.className = 'works-actions';
+        const sourceLabel = document.createElement('small');
+        const githubLink = document.createElement('a');
+        githubLink.className = 'works-github';
+        githubLink.href = githubUrl.href;
+        githubLink.target = '_blank';
+        githubLink.rel = 'noopener noreferrer';
+        sourceLabel.textContent = 'SOURCE';
+        githubLink.textContent = 'GitHub Repository ↗';
+        githubLink.setAttribute('aria-label', `${work.title}のGitHubリポジトリを開く`);
+        actions.append(sourceLabel, githubLink);
+        card.appendChild(actions);
+      }
+    }
+
     list.appendChild(card);
   });
 }
