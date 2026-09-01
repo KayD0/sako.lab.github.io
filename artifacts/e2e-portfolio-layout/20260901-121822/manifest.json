@@ -1,0 +1,65 @@
+{
+  "task": "e2e-portfolio-layout",
+  "runId": "20260901-121822",
+  "baseUrl": "http://127.0.0.1:4173/",
+  "runner": "Playwright 1.58.0 / Chromium",
+  "command": "node artifacts/e2e-portfolio-layout/20260901-121822/layout.e2e.js",
+  "result": "passed",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1366,
+      "height": 768,
+      "bodyWidth": 1366,
+      "bodyHeight": 768,
+      "browserErrors": 0
+    },
+    {
+      "name": "desktop-short",
+      "width": 1366,
+      "height": 600,
+      "bodyWidth": 1366,
+      "bodyHeight": 600,
+      "browserErrors": 0
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "bodyWidth": 390,
+      "bodyHeight": 844,
+      "browserErrors": 0
+    }
+  ],
+  "scenarios": [
+    "power-off screen is visible",
+    "power button completes boot sequence",
+    "Explorer opens in normal window mode",
+    "Projects opens from Start menu",
+    "Works opens from Start menu",
+    "Skills opens from Start menu",
+    "page has no horizontal or vertical viewport overflow",
+    "Explorer stays inside viewport and above taskbar"
+  ],
+  "fixes": [
+    "Removed the mobile Skills table fixed minimum width",
+    "Added fixed column ratios and text wrapping for mobile Skills tables"
+  ],
+  "screenshots": [
+    "desktop-01-power-off.png",
+    "desktop-02-profile.png",
+    "desktop-projects.png",
+    "desktop-works.png",
+    "desktop-skills.png",
+    "desktop-short-01-power-off.png",
+    "desktop-short-02-profile.png",
+    "desktop-short-projects.png",
+    "desktop-short-works.png",
+    "desktop-short-skills.png",
+    "mobile-01-power-off.png",
+    "mobile-02-profile.png",
+    "mobile-projects.png",
+    "mobile-works.png",
+    "mobile-skills.png"
+  ]
+}

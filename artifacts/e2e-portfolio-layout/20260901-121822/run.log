@@ -1,0 +1,7 @@
+Playwright E2E result: PASSED
+Desktop: 1366x768, body 1366x768, browser errors 0
+Desktop short: 1366x600, body 1366x600, browser errors 0
+Mobile: 390x844, body 390x844, browser errors 0
+Scenarios: power-on, staged boot, Profile, Projects, Works, Skills
+Fix applied: mobile Skills table columns now fit and wrap within the Explorer window.
+Fix applied: low-height desktop sidebar now stays above the Explorer status bar.
