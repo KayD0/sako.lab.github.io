@@ -172,3 +172,20 @@ export function initializeMinesweeper() {
   resetButton.addEventListener('click', reset);
   reset();
 }
+
+export function initializeGameLibrary() {
+  const library = document.querySelector('[data-game-library]');
+  if (!library) return;
+
+  const choices = [...library.querySelectorAll('[data-game-choice]')];
+  const views = [...library.querySelectorAll('[data-game-view]')];
+  choices.forEach((choice) => choice.addEventListener('click', () => {
+    const game = choice.dataset.gameChoice;
+    choices.forEach((item) => {
+      const selected = item === choice;
+      item.classList.toggle('selected', selected);
+      item.setAttribute('aria-selected', String(selected));
+    });
+    views.forEach((view) => view.classList.toggle('active', view.dataset.gameView === game));
+  }));
+}

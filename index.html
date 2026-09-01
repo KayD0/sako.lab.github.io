@@ -51,16 +51,40 @@
             <article class="panel data-panel" data-panel="skills"><small>SYSTEM PROPERTIES / DEVELOPMENT ENVIRONMENT</small><div id="skills-section"></div></article>
             <article class="panel games-panel" data-panel="games">
               <small>C:\PORTFOLIO\GAMES\MINESWEEPER.EXE</small>
-              <div class="minesweeper" data-minesweeper>
-                <header class="minesweeper-title"><i>GAME</i><b>Minesweeper</b></header>
-                <div class="minesweeper-menu" aria-hidden="true"><u>G</u>ame&nbsp;&nbsp; <u>H</u>elp</div>
-                <div class="minesweeper-controls">
-                  <output class="mine-counter" data-mine-count aria-label="Remaining mines">010</output>
-                  <button class="mine-reset" data-mine-reset aria-label="Start a new game">:)</button>
-                  <output class="mine-timer" data-mine-timer aria-label="Elapsed time">000</output>
-                </div>
-                <div class="mine-board" data-mine-board role="grid" aria-label="Minesweeper board"></div>
-                <p class="mine-status" data-mine-status aria-live="polite">Open every safe square. Right-click to place a flag.</p>
+              <div class="game-library" data-game-library>
+                <nav class="game-picker" aria-label="Choose a game" role="tablist">
+                  <strong>GAME LIBRARY</strong>
+                  <button class="selected" type="button" role="tab" aria-selected="true" data-game-choice="minesweeper"><i>MS</i><span>Minesweeper<small>Puzzle / Beginner</small></span></button>
+                  <button type="button" role="tab" aria-selected="false" data-game-choice="memory"><i>MM</i><span>Memory Match<small>Cards / 8 pairs</small></span></button>
+                  <p>More games coming soon...</p>
+                </nav>
+                <section class="game-stage active" role="tabpanel" data-game-view="minesweeper">
+                  <div class="game-stage-heading"><div><small>NOW PLAYING</small><h2>Minesweeper</h2></div><span>9 x 9 / 10 MINES</span></div>
+                  <div class="minesweeper" data-minesweeper>
+                    <header class="minesweeper-title"><i>GAME</i><b>Minesweeper</b></header>
+                    <div class="minesweeper-menu" aria-hidden="true"><u>G</u>ame&nbsp;&nbsp; <u>H</u>elp</div>
+                    <div class="minesweeper-controls">
+                      <output class="mine-counter" data-mine-count aria-label="Remaining mines">010</output>
+                      <button class="mine-reset" data-mine-reset aria-label="Start a new game">:)</button>
+                      <output class="mine-timer" data-mine-timer aria-label="Elapsed time">000</output>
+                    </div>
+                    <div class="mine-board" data-mine-board role="grid" aria-label="Minesweeper board"></div>
+                    <p class="mine-status" data-mine-status aria-live="polite">Open every safe square. Right-click to place a flag.</p>
+                  </div>
+                </section>
+                <section class="game-stage" role="tabpanel" data-game-view="memory">
+                  <div class="game-stage-heading"><div><small>NOW PLAYING</small><h2>Memory Match</h2></div><span>4 x 4 / 8 PAIRS</span></div>
+                  <div class="memory-game" data-memory-game>
+                    <header class="memory-title"><i>GAME</i><b>Memory Match</b></header>
+                    <div class="memory-toolbar">
+                      <span>Moves: <output data-memory-moves>0</output></span>
+                      <button type="button" data-memory-reset>New Game</button>
+                      <span>Time: <output data-memory-time>000</output></span>
+                    </div>
+                    <div class="memory-board" data-memory-board role="grid" aria-label="Memory card board"></div>
+                    <p class="memory-status" data-memory-status aria-live="polite">Turn over two cards and find all matching pairs.</p>
+                  </div>
+                </section>
               </div>
             </article>
             <article class="panel contact" data-panel="contact"><small>CONTACT.EXE / CHANNEL READY</small><div class="mail-icon">@</div><h2>Let's build something.</h2><p>技術やプロダクトについてのご相談は、GitHubからお気軽にどうぞ。</p><dl><dt>Channel</dt><dd>GitHub</dd><dt>Focus</dt><dd>Backend / Cloud / Product</dd><dt>Status</dt><dd>KEEP BUILDING</dd></dl><a href="https://github.com/sako-lab" target="_blank" rel="noreferrer">Open GitHub</a></article>

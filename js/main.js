@@ -1,7 +1,8 @@
 import { generateAboutMeHTML } from './components/aboutme.js';
 import { generateSkillsHTML } from './components/skills.js';
 import { generateExperienceHTML } from './components/experiences.js';
-import { initializeMinesweeper } from './components/minesweeper.js';
+import { initializeGameLibrary, initializeMinesweeper } from './components/minesweeper.js';
+import { initializeMemoryGame } from './components/memory-game.js';
 
 const os = document.querySelector('[data-winfolio]');
 
@@ -12,6 +13,8 @@ if (os) {
   });
   generateExperienceHTML();
   initializeMinesweeper();
+  initializeGameLibrary();
+  initializeMemoryGame();
 
   const win = os.querySelector('[data-window]');
   const start = os.querySelector('[data-start]');
