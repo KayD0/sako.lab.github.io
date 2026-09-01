@@ -1,87 +1,10 @@
-const aboutMeData = {
-  title: '職務概要',
-  careerSummary: [
-    {
-      organization: '株式会社アーネット',
-      items: [
-        '大学卒業後、業務システムエンジニアとして活動し、C++を用いた開発案件に従事。',
-        'C#を用いた開発案件に約2年間、業務系システムおよび業務Webアプリケーションの開発に従事。'
-      ]
-    },
-    {
-      organization: 'デロイトトーマツリップルマーク合同会社',
-      items: [
-        '転職後、約3年間C#を用いた業務系Webアプリケーションの開発に従事。',
-        '新規機能開発を中心に、設計、実装、単体試験のテストコード作成、結合試験仕様書の作成まで一人称で担当。'
-      ]
-    },
-    {
-      organization: '個人事業主',
-      items: [
-        'C#を用いた開発案件に従事。',
-        'ECパッケージおよびECマイクロサービスの新規開発、機能改修、リプレイス、保守開発を担当。',
-        '決済システムのバックエンドにおける新規機能開発、機能改修、保守開発を担当。'
-      ]
-    }
-  ],
-  experience: [
-    {
-      category: 'リーダー経験',
-      items: ['3〜4名規模のチームリーダー経験', 'タスクの切り出し', 'コードレビューの実施経験', 'コスト試算']
-    },
-    {
-      category: 'バックエンド開発',
-      items: [
-        'C#で一人称で作業可能な実務経験（5年）',
-        'ASP.NET MVC、ASP.NET Coreを使用したWebアプリケーション開発経験',
-        '.NETのバージョンアップ経験',
-        'クリーンアーキテクチャの理解と実践経験',
-        'テストコードの実装経験',
-        '新技術やサードパーティー製品の技術調査',
-        '脆弱性パッケージ監視半自動化の知見',
-        '開発企画経験'
-      ]
-    },
-    {
-      category: 'データベース設計・最適化',
-      items: [
-        'テーブル設計、ER図作成',
-        'Entity Framework、Dapperを用いたデータベース操作の経験',
-        'SQL Server、Oracleにおけるクエリやデータ構造のチューニング経験',
-        '複数のデータベース環境での開発経験'
-      ]
-    },
-    {
-      category: 'フロントエンド開発',
-      items: ['JavaScript、HTML、CSS、Vueによるフロントエンド開発の実務経験', 'レスポンシブデザインの実装経験']
-    },
-    {
-      category: 'クラウド・インフラ',
-      items: [
-        'Azure、AWS、GCPでの開発経験',
-        'Terraformを用いたIaC、コード保守、リソース作成・更新の経験',
-        'WSL2でのDocker環境構築・開発、イメージファイルおよびCompose YAMLファイルの作成経験'
-      ]
-    },
-    {
-      category: '開発プロセス・自動化',
-      items: [
-        'Gitを用いたソースコード管理の実務経験',
-        'CI/CDパイプラインの利用およびパイプラインコードの保守経験',
-        'Agile、Scrumなどの開発手法の実務経験',
-        'Selenium、Playwrightを用いたテスト自動化経験'
-      ]
-    },
-    {
-      category: '学習能力',
-      items: ['新しい技術の学習と知識共有', '生成AIを使った業務効率化の提案・実装経験', '生成AIを使った機能開発・新規開発の経験']
-    }
-  ]
-};
-
-export function generateAboutMeHTML() {
+export async function generateAboutMeHTML() {
   const section = document.getElementById('about-me-section');
   if (!section) return;
+
+  const response = await fetch(new URL('../data/aboutme.json', import.meta.url));
+  if (!response.ok) throw new Error(`Failed to load about me: ${response.status}`);
+  const aboutMeData = await response.json();
 
   const title = document.createElement('h1');
   title.className = 'title';

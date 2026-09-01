@@ -1,20 +1,32 @@
-import { generateAboutMeHTML } from './components/aboutme.js';
-import { generateSkillsHTML } from './components/skills.js';
-import { generateExperienceHTML } from './components/experiences.js';
+import { generateAboutMeHTML } from './components/aboutme.js?v=20260901-6';
+import { generateSkillsHTML } from './components/skills.js?v=20260901-6';
+import { generateExperienceHTML } from './components/experiences.js?v=20260901-6';
+import { generateWorksHTML } from './components/works.js?v=20260901-6';
 import { initializeGameLibrary, initializeMinesweeper } from './components/minesweeper.js';
 import { initializeMemoryGame } from './components/memory-game.js';
+import { initializePinball } from './components/pinball.js';
+import { initializeSnake } from './components/snake.js';
 
 const os = document.querySelector('[data-winfolio]');
 
 if (os) {
-  generateAboutMeHTML();
+  generateAboutMeHTML().catch((error) => {
+    document.getElementById('about-me-section').textContent = `Profile could not be loaded: ${error.message}`;
+  });
   generateSkillsHTML().catch((error) => {
     document.getElementById('skills-section').textContent = `Skills could not be loaded: ${error.message}`;
   });
-  generateExperienceHTML();
+  generateExperienceHTML().catch((error) => {
+    document.getElementById('experience-section').textContent = `Projects could not be loaded: ${error.message}`;
+  });
+  generateWorksHTML().catch((error) => {
+    document.querySelector('[data-panel="works"] .works-list').textContent = `Works could not be loaded: ${error.message}`;
+  });
   initializeMinesweeper();
   initializeGameLibrary();
   initializeMemoryGame();
+  initializePinball();
+  initializeSnake();
 
   const win = os.querySelector('[data-window]');
   const start = os.querySelector('[data-start]');

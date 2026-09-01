@@ -1,0 +1,57 @@
+{
+  "title": "Works",
+  "items": [
+    {
+      "number": "01",
+      "code": "SAKO.LAB",
+      "title": "エンジニアポートフォリオ",
+      "description": "Windows 98風のデスクトップUIで、プロフィール、経歴、スキル、制作実績、ミニゲームを閲覧できるポートフォリオサイトです。",
+      "technologies": ["HTML", "CSS", "JavaScript", "Canvas", "JSON", "GitHub Pages"]
+    },
+    {
+      "number": "02",
+      "code": "SMART FP",
+      "title": "FP向けライフプラン診断アプリ",
+      "description": "顧客情報の管理、資産推移の試算、就業不能・老後資金・税金などのテーマ別診断を一元化したWindowsデスクトップアプリです。診断結果の保存、再計算、上書き、比較に対応し、顧客データはSQLiteで端末内に保存します。",
+      "technologies": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Tauri",
+        "Rust",
+        "SQLite",
+        "Tailwind CSS",
+        "Vitest",
+        "Playwright"
+      ]
+    },
+    {
+      "number": "03",
+      "code": "CODE LENS",
+      "title": "コードレビュー学習サービス",
+      "description": "Frontend・Backendのコードレビュー問題を通じて、Performance・Security・Readability・Maintainabilityの判断力を学習できるサービスです。",
+      "technologies": ["TypeScript", "React", "Next.js", "PostgreSQL"]
+    },
+    {
+      "number": "04",
+      "code": "AGENT HUB",
+      "title": "Codexセッション統合管理",
+      "description": "複数のCodexセッションやリポジトリの状態を一元管理し、追加指示、承認、差分確認、ファイル連携などの開発作業を支援するVS Code拡張機能です。",
+      "technologies": ["TypeScript", "VS Code Extension API", "Codex App Server"]
+    },
+    {
+      "number": "05",
+      "code": "LOCAL FIRST VAULT",
+      "title": "ローカルファースト・パスワードマネージャー",
+      "description": "パスワードやAPIキーなどの秘密情報を運営サーバーへ送信せず、ユーザーの端末上で暗号化して管理するデスクトップアプリです。",
+      "technologies": ["TypeScript", "React", "Rust", "Tauri", "SQLite"]
+    },
+    {
+      "number": "03",
+      "code": "UI LAB",
+      "title": "UIデザイン・モーションサンプル集",
+      "description": "ボタン、フォーム、カーソル、画面演出などのUIサンプルを分類・検索し、動作と実装コードを確認できるデザインリファレンスサービスです。",
+      "technologies": ["TypeScript", "Astro", "CSS", "Vitest"]
+    }
+  ]
+}

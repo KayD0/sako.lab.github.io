@@ -11,11 +11,17 @@ export async function generateSkillsHTML() {
   title.textContent = skillsData.title;
   section.appendChild(title);
 
+  const grid = document.createElement('div');
+  grid.className = 'skills-grid';
+  section.appendChild(grid);
+
   skillsData.categories.forEach((category) => {
+    const categoryCard = document.createElement('section');
+    categoryCard.className = 'skills-category';
     const categoryTitle = document.createElement('h3');
     categoryTitle.className = 'text-primary';
     categoryTitle.textContent = category.name;
-    section.appendChild(categoryTitle);
+    categoryCard.appendChild(categoryTitle);
 
     const table = document.createElement('table');
     const thead = table.createTHead();
@@ -34,6 +40,7 @@ export async function generateSkillsHTML() {
       row.insertCell().textContent = skill.years;
       row.insertCell().textContent = skill.level;
     });
-    section.appendChild(table);
+    categoryCard.appendChild(table);
+    grid.appendChild(categoryCard);
   });
 }
