@@ -2,7 +2,7 @@ export async function generateAboutMeHTML() {
   const section = document.getElementById('about-me-section');
   if (!section) return;
 
-  const response = await fetch(new URL('../data/aboutme.json', import.meta.url));
+  const response = await fetch(new URL('../data/aboutme.json?v=20261001-1', import.meta.url));
   if (!response.ok) throw new Error(`Failed to load about me: ${response.status}`);
   const aboutMeData = await response.json();
 
@@ -10,6 +10,17 @@ export async function generateAboutMeHTML() {
   title.className = 'title';
   title.textContent = aboutMeData.title;
   section.appendChild(title);
+
+  const updated = document.createElement('p');
+  updated.textContent = `更新日：${aboutMeData.updatedAt}`;
+  section.appendChild(updated);
+
+  aboutMeData.introduction.forEach((text) => {
+    const paragraph = document.createElement('p');
+    paragraph.textContent = text;
+    paragraph.style.whiteSpace = 'pre-line';
+    section.appendChild(paragraph);
+  });
 
   const summary = document.createElement('div');
   summary.className = 'career-summary';
@@ -52,4 +63,22 @@ export async function generateAboutMeHTML() {
     experienceGrid.appendChild(article);
   });
   section.appendChild(experienceGrid);
+
+  aboutMeData.highlights.forEach((highlight) => {
+    const heading = document.createElement('h2');
+    heading.className = 'experience-title';
+    heading.textContent = highlight.title;
+    section.appendChild(heading);
+    const article = document.createElement('article');
+    article.className = 'career-entry';
+    highlight.sections.forEach((item) => {
+      const subtitle = document.createElement('h3');
+      subtitle.textContent = item.heading;
+      const paragraph = document.createElement('p');
+      paragraph.textContent = item.text;
+      paragraph.style.whiteSpace = 'pre-line';
+      article.append(subtitle, paragraph);
+    });
+    section.appendChild(article);
+  });
 }

@@ -2,7 +2,7 @@ export async function generateSkillsHTML() {
   const section = document.getElementById('skills-section');
   if (!section) return;
 
-  const response = await fetch(new URL('../data/skills.json', import.meta.url));
+  const response = await fetch(new URL('../data/skills.json?v=20261001-1', import.meta.url));
   if (!response.ok) throw new Error(`Failed to load skills: ${response.status}`);
   const skillsData = await response.json();
 
@@ -10,6 +10,10 @@ export async function generateSkillsHTML() {
   title.className = 'title';
   title.textContent = skillsData.title;
   section.appendChild(title);
+
+  const note = document.createElement('p');
+  note.textContent = `更新日：${skillsData.updatedAt} / ★：業務経験あり`;
+  section.appendChild(note);
 
   const grid = document.createElement('div');
   grid.className = 'skills-grid';
@@ -38,7 +42,9 @@ export async function generateSkillsHTML() {
       const nameCell = row.insertCell();
       nameCell.textContent = `${skill.starred ? '★' : ''}${skill.name}`;
       row.insertCell().textContent = skill.years;
-      row.insertCell().textContent = skill.level;
+      const levelCell = row.insertCell();
+      levelCell.textContent = skill.level;
+      levelCell.style.whiteSpace = 'pre-line';
     });
     categoryCard.appendChild(table);
     grid.appendChild(categoryCard);

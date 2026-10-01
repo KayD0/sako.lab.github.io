@@ -1,6 +1,6 @@
-import { generateAboutMeHTML } from './components/aboutme.js?v=20260901-6';
-import { generateSkillsHTML } from './components/skills.js?v=20260901-6';
-import { generateExperienceHTML } from './components/experiences.js?v=20260901-6';
+import { generateAboutMeHTML } from './components/aboutme.js?v=20261001-1';
+import { generateSkillsHTML } from './components/skills.js?v=20261001-1';
+import { generateExperienceHTML } from './components/experiences.js?v=20261001-1';
 import { generateWorksHTML } from './components/works.js?v=20260901-8';
 import { initializeGameLibrary, initializeMinesweeper } from './components/minesweeper.js';
 import { initializeMemoryGame } from './components/memory-game.js';

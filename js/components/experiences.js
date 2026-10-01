@@ -2,7 +2,7 @@ export async function generateExperienceHTML() {
   const section = document.getElementById('experience-section');
 
   if (!section) return;
-  const response = await fetch(new URL('../data/experiences.json', import.meta.url));
+  const response = await fetch(new URL('../data/experiences.json?v=20261001-1', import.meta.url));
   if (!response.ok) throw new Error(`Failed to load experiences: ${response.status}`);
   const experienceData = await response.json();
 
@@ -135,6 +135,22 @@ export async function generateExperienceHTML() {
         tasksDiv.appendChild(tasksTitle);
         tasksDiv.appendChild(tasksList);
         projectDiv.appendChild(tasksDiv);
+      }
+
+      if (project.challenges?.length) {
+        const challengesDiv = document.createElement('div');
+        challengesDiv.className = 'mb-3';
+        const challengesTitle = document.createElement('h5');
+        challengesTitle.className = 'text-primary mb-2';
+        challengesTitle.textContent = '課題・取組';
+        const challengesList = document.createElement('ul');
+        project.challenges.forEach((challenge) => {
+          const item = document.createElement('li');
+          item.textContent = challenge;
+          challengesList.appendChild(item);
+        });
+        challengesDiv.append(challengesTitle, challengesList);
+        projectDiv.appendChild(challengesDiv);
       }
 
       // 技術フェーズ
